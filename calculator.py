@@ -7,14 +7,14 @@ calculator program yourself in this file.
 #def open_file():
     #arithmetic = open("arithmetic.py")
 
-
+import arithmetic
 
 def main():
     #arithmetic = open("arithmetic.py")
 	# open the file from arithmetic.py
     #my_file = open("arithmetic.py")
     # get input from user
-    math_input = raw_input("> ")
+    math_input = raw_input("Please input a prefix notation")
     array = []
     array.append(math_input)
     array = math_input.split(" ")
@@ -27,22 +27,21 @@ def main():
 
     # start with calling the add function
     if character == "+":
-        from arithmetic import add(num1,num2)
-        print add(num1,num2)
+        print arithmetic.add(num1,num2)
     elif character == "-":
-        print subtract(num1,num2)
+        print arithmetic.subtract(num1,num2)
     elif character == "*":
-        print multiply(num1,num2)
+        print arithmetic.multiply(num1,num2)
     elif character == "/":
-        print divide(num1,num2)
+        print arithmetic.divide(num1,num2)
     elif character == "square":
-        print square(num1)
+        print arithmetic.square(num1)
     elif character == "cube":
-        print cube(num1)
+        print arithmetic.cube(num1)
     elif character == "pow":
-        print power(num1,num2)
+        print arithmetic.power(num1,num2)
     elif character == "mod":
-        print mod(num1,num2)
+        print arithmetic.mod(num1,num2)
 
 
 
