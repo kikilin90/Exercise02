@@ -18,50 +18,58 @@ def main():
     math_input = raw_input("> ")
     array = []
     array = math_input.split(" ")
-    print array
+    #print array
 
     character = str(array[0])
     num1 = int(array[1])
     if len(array) == 3:
         num2 = int(array[2])
+#        print "Please enter the correct calculation format for prefix notation."
 #    elif len(array) == 1:
 #        print "Please enter at least one character and one number."
 #    else:
 #        print "Please only use one character and two numbers."
 
-
-
-#    for character in array:
-
-    #pass_stmt = str(array[0])
-
-    if character == "+" or "-" or "*" or "/" or "square" or "cube" or "pow" or "mod":
-        if character == "+":
-            print arithmetic.add(num1,num2)
-            #break
-        elif character == "-":
-            print arithmetic.subtract(num1,num2)
-            #break
-        elif character == "*":
-            print arithmetic.multiply(num1,num2)
-            #break
-        elif character == "/":
-            print arithmetic.divide(num1,num2)
-            #break
-        elif character == "square":
-            print arithmetic.square(num1)
-            #break
-        elif character == "cube":
-            print arithmetic.cube(num1)
-            #break
-        elif character == "pow":
-            print arithmetic.power(num1,num2)
-            #break
-        elif character == "mod":
-            print arithmetic.mod(num1,num2)
-            #break
-        else:
-            print "Sorry, I do not understand. Please give me a mathematical character for calculation."
+    while character == "+" or "-" or "*" or "/" or "square" or "cube" or "pow" or "mod" and len(array) == 2 or 3:
+        try:
+            if character == "+":
+                print arithmetic.add(num1,num2)
+                break
+            elif character == "-":
+                print arithmetic.subtract(num1,num2)
+                break
+            elif character == "*":
+                print arithmetic.multiply(num1,num2)
+                break
+            elif character == "/":
+                print arithmetic.divide(num1,num2)
+                break
+            elif character == "square":
+                if len(array) > 2:
+                    print "Square can only accept one number."
+                    break
+                else:
+                    print arithmetic.square(num1)
+                    break
+            elif character == "cube":
+                if len(array) > 2:
+                    print "Cube can only accept one number."
+                    break
+                else:
+                    print arithmetic.cube(num1)
+                    break
+            elif character == "pow":
+                print arithmetic.power(num1,num2)
+                break
+            elif character == "mod":
+                print arithmetic.mod(num1,num2)
+                break
+            else:
+                print "Sorry, I do not understand. Please give me a mathematical character for calculation."
+                break
+        except UnboundLocalError:
+            print "Sorry, please enter the correct format for prefix notation calulation."
+            break
 
 
     # continue with a while loop for additional numbers
